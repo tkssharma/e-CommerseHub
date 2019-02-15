@@ -1,0 +1,28 @@
+{
+    // Use IntelliSense to learn about possible Node.js debug attributes.
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "runtimeExecutable":"node",
+            "cwd": "${workspaceRoot}",
+            "protocol": "auto",
+            "program": "${workspaceRoot}/server.js"
+        },
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Node: API-1",
+            "restart": true,
+            "protocol": "inspector",
+            "address": "127.0.0.1",
+            "port": 9230,
+            "localRoot": "${workspaceRoot}/",
+            "remoteRoot": "/usr/src/app/",
+            "timeout": 20000
+        }
+    ]
+}

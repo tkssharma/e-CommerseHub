@@ -1,0 +1,35 @@
+#  Run `docker-compose build` to build the images
+#  Run `docker-compose up` to run the containers
+version: '3.5'
+services:
+  mongo:
+    container_name: api_mongo
+    image: mongo:latest
+    volumes:
+      - ~/blabladatadir/mongo:/var/lib/mongo
+    ports:
+      - 27017:27017
+    networks:
+      - api_network
+  backend:
+    container_name: api_backend
+    build: ./
+    image: api_backend
+    environment:
+      - NODE_ENV=local
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - 3005:3005
+      - 9230:9230
+    restart: always
+    depends_on:
+      - mongo
+    networks:
+      - api_network
+    env_file:
+      - env.sh
+networks:
+  api_network:
+    driver: bridge
+    name: api_network
