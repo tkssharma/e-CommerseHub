@@ -19,7 +19,7 @@ REST API to support application features
   - Heroku deployment
   - Mini e-commerce platform 
 
-# KPI library App #
+# Cart Application #
 
 "It's just simple application to provide REST APIs for mini e-commerce platform where individual can buy products and can pay the bills
 
@@ -30,6 +30,16 @@ git clone  repo
 npm install
 npm run startdev
 tsc -- watch
+```
+# Application configuration
+```javascript
+env.sh need to be added locally 
+export NODE_ENV="dev"
+export PORT="3005"
+export MONGOURL="mongodb://mongo/hello"
+export EXPRESS_SESSION_SECRET="************************"
+export F_CLIENTID="**************"
+export F_CLIENTSECRET="**********************"
 ```
 
 # Application NPM Script
