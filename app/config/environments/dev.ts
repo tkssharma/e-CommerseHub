@@ -47,10 +47,7 @@ configuration.url = {
 }
 configuration.uploadpath = {
   uploaddir: process.env.UPLOAD_DIR,
-  profiledir: process.env.PROFILE_PICTURE_DIR,
-  vendordir: process.env.VENDOR_BRANDING_DIR,
-  vehicledir: process.env.VEHICLE_PICTURE_DIR,
-  documentdir: process.env.DOCUMENT_UPLOAD_DIR,
+  profiledir: process.env.PROFILE_PICTURE_DIR
 }
 
 module.exports = configuration;

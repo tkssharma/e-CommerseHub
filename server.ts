@@ -7,13 +7,13 @@ console.log(` using ${process.env.NODE_ENV} to run application`);
 global.configuration = require(`./app/config/environments/${env}`);
 import App from './express';
 
-const port = (process.env.PORT || 3000);
+const port = (process.env.PORT);
 const logger = require('winston');
 import mongoose from './app/lib/mongoose';
 mongoose();
 
 const server = http.createServer(App);
-server.listen(process.env.PORT || 3000);
+server.listen(process.env.PORT);
 server.on('error', onError);
 server.on('listening', onListening);
 

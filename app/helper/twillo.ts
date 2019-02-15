@@ -10,7 +10,7 @@ let TwilioHelper = {
     client.sendMessage({
       to: phone_number,
       from: twilioConfig.phone,
-      body: `Hello from Bal Bla Scooty\nYour verification code is ${code}`,
+      body: `Hello from Bal Bla e-Commerce-Hub\nYour verification code is ${code}`,
     }, (err, message) => {
       callback(message);
     });
@@ -30,7 +30,7 @@ let TwilioHelper = {
     client.sendMessage({
       to: phone,
       from: twilioConfig.phone,
-      body: `Scooty-TM\n${message}`,
+      body: `e-Commerce-Hub-TM\n${message}`,
     }, (err, message) => {
       // 
     });

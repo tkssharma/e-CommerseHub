@@ -140,8 +140,6 @@ class userController {
     User.findOne({ 'email': email }, (error, user) => {
       if (user) {
         user.type = 2;
-        user.vendor = this.buildVendor(body);
-        // update user role to vendor
         user.save(function (err, updated_user) {
           if (err) {
             callback('error occoured while chaging role');
@@ -155,17 +153,7 @@ class userController {
       }
     });
   }
-  static buildVendor(body) {
-    return {
-      vendorName: body.vendorName,
-      branding: body.branding,
-      picture: body.picture,
-      terms: body.terms,
-      vehicleTypes: body.vehicleTypes,
-      minimumPricing: body.minimumPricing,
-      numberOfVehicle: body.numberOfVehicle
-    }
-  }
+
   static updateUser(email, data, callback) {
     User.findOne({ 'email': email }, (error, user) => {
       if (user) {

@@ -99,20 +99,6 @@ public getUserByEmail(req, res){
   });
 }
 
-public becomeVendor(req, res){
-  UserController.changeUserRole(req, ( error, success) => {
-    if ( error ) {
-      res.status(403).json({success : false, message: error, description: 'error occoured while updating user' });
-    } else {
-      res.json({
-        statusCode: 200,
-        message: 'success',
-        description: 'user updated successfully to Vendor role',
-      });
-    }
-  });
-}
-
 public uploadProfilepicture(req, res){
   UserController.updateUser( req.user.email, { picture: req.file.filename }, ( error, user ) => {
 		if ( error ) {
@@ -161,7 +147,6 @@ public uploadDocuments(req, res){
     this.router.get("/:email", this.getUserByEmail);
     this.router.get("/reset-password/:email",expressJoiValidator(expressJoi.resetPassword),  this.resetPassword);
     this.router.put("/update/:email", this.updateUser);
-    this.router.put("/change-role/:email", expressJoiValidator(expressJoi.changeRole), this.becomeVendor);
     this.router.post('/upload-profile-picture', upload.single('avatar'), this.uploadProfilepicture);
     this.router.post('/upload-documents', uploadDocuments.array('documents'), this.uploadDocuments);
   }

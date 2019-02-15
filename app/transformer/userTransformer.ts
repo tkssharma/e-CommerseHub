@@ -9,12 +9,12 @@ let UserTransformer = {
     if ( Array.isArray(users) ) {
 			let output = [];
 			users.forEach(( user ) => {
-				output.push( UserTransformer._transformVendors(user) );
+				output.push( UserTransformer._transformUsers(user) );
 			});
 			return output;
 		}
 		else {
-			return UserTransformer._transformVendors(users);
+			return UserTransformer._transformUsers(users);
 		}
   },
   transform: (users) => {
@@ -29,10 +29,10 @@ let UserTransformer = {
       return UserTransformer._transform(users);
     }
   },
-  calculateVendors: (users: any | null) => {
+  calculateUsers: (users: any | null) => {
     if (Array.isArray(users)) {
       return {
-        vendors : users.length ? users.length : 100,
+        Users : users.length ? users.length : 100,
         vehicles : (users['vehicle'] ) ? users['vehicle'].length : 1000,
         cities :100
       }
@@ -60,19 +60,19 @@ let UserTransformer = {
       profile_picture: user.profile_picture ? null : null // will fix later
     };
   },
-  transformVendors: ( users ) => {
+  transformUsers: ( users ) => {
 		if ( Array.isArray(users) ) {
 			let output = [];
 			users.forEach(( user ) => {
-				output.push( UserTransformer._transformVendors(user) );
+				output.push( UserTransformer._transformUsers(user) );
 			});
 			return output;
 		}
 		else {
-			return UserTransformer._transformVendors(users);
+			return UserTransformer._transformUsers(users);
 		}
 	},
-	_transformVendors: ( user ) => {
+	_transformUsers: ( user ) => {
 		if ( ! user ) { return {}; }
     let user_status = ( user.status === '1' ) ? 'active' : 'disabled';
     const obj:any = {};

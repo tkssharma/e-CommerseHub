@@ -48,24 +48,6 @@ const helper = {
 		}
 		return this.resource(`/${uploadpath.uploaddir}/${uploadpath.profiledir}/${filename}`);
 	},
-	vehicleURL( filename ) {
-		if ( filename.includes('://') ) {
-			return filename;
-		}
-		return this.resource(`/${uploadpath.uploaddir}/${uploadpath.vehicledir}/${filename}`);
-	},
-	vendorURL( filename ) {
-		if ( filename.includes('://') ) {
-			return filename;
-		}
-		return this.resource(`/${uploadpath.uploaddir}/${uploadpath.vendordir}/${filename}`);
-  },
-	scootyImageURL( filename ) {
-		if ( filename.includes('://') ) {
-			return filename;
-		}
-		return this.resource(`/${uploadpath.uploaddir}/${uploadpath.profiledir}/${filename}`);
-	},
 	userDocumentURL( filename ) {
 		if ( filename.includes('://') ) {
 			return filename;
@@ -78,8 +60,6 @@ const helper = {
   deleteFile( type, filename ) {
 		let location;
     if ( type === 'profile' ) { location = path.join( uploadpath.uploaddir, uploadpath.profiledir ) }
-    else if ( type === 'scooty' ) { location = path.join( uploadpath.uploaddir, uploadpath.profiledir ) }
-		else if ( type === 'document' ) { location = path.join( uploadpath.UPLOAD_DIR, uploadpath.documentdir ) }
 		else { location = uploadpath.uploaddir; }
 		if (filename) {
 			fs.unlink( path.join( location, filename ), () => {

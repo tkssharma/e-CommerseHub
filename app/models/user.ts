@@ -41,12 +41,10 @@ const userSchema = new Schema({
     type: String,
     default: 1
   },
-  // type 1 use & 2 is Vendor
   status: {
     type: String,
     default: 1
   },
-  vendor: mongoose.Schema.Types.Mixed,
   profile_picture: mongoose.Schema.Types.Mixed,
   phone: String,
   email_verified: Boolean,

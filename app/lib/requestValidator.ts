@@ -19,20 +19,6 @@ const validation = {
     body: {
       email: Joi.string().regex(/^[\w.]+@[\w]+?(\.[a-zA-Z]{2,3}){1,3}$/).required(),
     }
-  },
-  changeRole: {
-    body: {
-      vendorName: Joi.string().min(4).required(),
-      branding: Joi.string().min(2).required(),
-      picture : Joi.string().required(),
-      terms: Joi.string().min(4).required(),
-      vehicleTypes: Joi.string().min(1).required(),
-      minimumPricing: Joi.string().min(2).required(),
-      numberOfVehicle: Joi.string().min(1).required()
-    },
-    params: {
-      email: Joi.string().regex(/^[\w.]+@[\w]+?(\.[a-zA-Z]{2,3}){1,3}$/).required(),
-    }
   }
 };
 export default validation
