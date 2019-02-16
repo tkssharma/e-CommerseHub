@@ -2,7 +2,7 @@ import * as express from "express";
 const router = express.Router();
 
 import { Router } from "express";
-
+import product from '../models/data/cart';
 
 
 export class DefaultRouter {
@@ -24,9 +24,14 @@ export class DefaultRouter {
   public sayHello(req, res) {
     res.status(200).json({ success: true, message: 'i am up and running .. ⚡️⚡️⚡️⚡️⚡️⚡️⚡️' });
   };
+  public getProducts(req, res) {
+    res.status(200).json(product);
+  };
 
   init() {
     this.router.get("/", this.sayHello);
+    this.router.get("/products", this.getProducts);
+
   }
 }
 
