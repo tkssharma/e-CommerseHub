@@ -1,4 +1,3 @@
-export { };
 const uuidv4 = require('uuid/v4');
 import User from '../models/user';
 declare function require(name: string);
@@ -153,7 +152,6 @@ class userController {
       }
     });
   }
-
   static updateUser(email, data, callback) {
     User.findOne({ 'email': email }, (error, user) => {
       if (user) {

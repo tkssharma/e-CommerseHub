@@ -8,4 +8,4 @@ export const formatPrice = (x, currency) => {
 };
 
 export const productsAPI =
-  'http://ms-commerce.com/api/cart/v1/products';
+  'http://ms-commerce.com/cart/v1/products';

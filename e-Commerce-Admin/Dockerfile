@@ -11,6 +11,6 @@ RUN  npm install
 # Run npm install --global grpc --unsafe-perm
 
 EXPOSE 3002 9202
-
+CMD [ "npm", "run", "watchserver" ]
 CMD [ "npm", "run", "startdev" ]
 

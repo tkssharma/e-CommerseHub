@@ -10,5 +10,5 @@ COPY . .
 RUN npm install
 
 EXPOSE 3001 9201
-
+CMD [ "npm", "run", "watchserver" ]
 CMD [ "npm", "run", "startdev" ]

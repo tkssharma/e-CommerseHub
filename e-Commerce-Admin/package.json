@@ -12,7 +12,7 @@
     "test": ". ./env.sh  && NODE_ENV=test && mocha ",
     "debug": ". ./env.sh && NODE_ENV=test && cd dist && nodemon --inspect=0.0.0.0:9230 server.js",
     "prestartdev": " npm run clean && tsc &&  npm run copy && npm run watch",
-    "poststartdev" : "tsc --watch",
+    "watchserver" : "tsc --watch",
     "dev": ". ./env.sh && ts-node server.ts",
     "start-tsc": ". ./env.sh && nodemon ./dist/server.js",
     "buildAndstart": ". ./env.sh && npm run build && npm run start"
