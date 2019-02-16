@@ -7,13 +7,10 @@ WORKDIR /usr/src/app
 COPY . .
 
 # npm install
-RUN apt-get update && npm install
+RUN  npm install
 # Run npm install --global grpc --unsafe-perm
 
-EXPOSE 3005 9230
+EXPOSE 3002 9202
 
-CMD [ "npm", "install" ]
+CMD [ "npm", "run", "startdev" ]
 
-CMD [ "npm", "run", "build" ]
-
-CMD [ "npm", "run", "debug" ]

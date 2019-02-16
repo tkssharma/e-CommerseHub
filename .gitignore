@@ -8,6 +8,7 @@ env.sh
 */env.sh
 /dist
 /test
+/*/dist
 # Runtime data
 pids
 *.pid

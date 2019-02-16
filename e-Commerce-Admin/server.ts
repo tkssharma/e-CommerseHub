@@ -1,7 +1,6 @@
 import * as http from 'http';
 import * as debug from 'debug';
 // After you declare "app"
-declare function require(name:string);
 const env = process.env.NODE_ENV || 'dev'
 console.log(` using ${process.env.NODE_ENV} to run application`);
 global.configuration = require(`./app/config/environments/${env}`);
