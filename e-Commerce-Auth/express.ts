@@ -10,7 +10,6 @@ import * as express from 'express';
 import * as logger from 'morgan';
 import * as bodyParser from 'body-parser';
 import errorHandlers from './app/helper/errorHandler';
-
 // Creates and configures an ExpressJS web server.
 class App {
   // ref to Express instance
