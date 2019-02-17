@@ -7,6 +7,13 @@ configuration.mongo = {
 configuration.URL = {
   frontEnd: process.env.FE_URL
 }
+configuration.db = {
+  user: process.env.USERNAME,
+  password: process.env.PASSWORD,
+  database: process.env.DATABASE,
+  host: process.env.HOST,
+  connectTimeout: 80000,
+};
 configuration.facebook = {
   client_id: process.env.F_CLIENTID,
   client_secret: process.env.F_CLIENTSECRET,
@@ -49,5 +56,6 @@ configuration.uploadpath = {
   uploaddir: process.env.UPLOAD_DIR,
   profiledir: process.env.PROFILE_PICTURE_DIR
 }
+configuration.logLevel ='info';
 
 module.exports = configuration;

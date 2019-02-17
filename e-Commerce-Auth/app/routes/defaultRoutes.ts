@@ -22,7 +22,7 @@ export class DefaultRouter {
  * @apiSuccess {String} message Message from API.
  */
   public sayHello(req, res) {
-    res.status(200).json({ success: true, message: 'i am up and running .. ⚡️⚡️⚡️⚡️⚡️⚡️⚡️' });
+    res.status(200).json({ success: true, message: 'i am up and running node + mongo .. ⚡️⚡️⚡️⚡️⚡️⚡️⚡️' });
   };
 
   init() {

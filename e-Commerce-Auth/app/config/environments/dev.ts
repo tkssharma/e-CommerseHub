@@ -1,9 +1,24 @@
 /* eslint quote-props: 0 */
 export { }
 const configuration: any = {};
-configuration.mongo = {
-  url:  process.env.MONGODB_URI || process.env.MONGOURL,
+
+configuration.db = {
+  mysql: {
+    user: process.env.USERNAME,
+    password: process.env.PASSWORD,
+    database: process.env.DATABASE,
+    host: process.env.HOST,
+    connectTimeout: 100000
+  },
+  mongo: {
+    host: process.env.MONGO_HOST,
+    port: process.env.MONGO_PORT,
+    uername: process.env.MONGO_USERNAME,
+    password: process.env.MONGO_PASSWORD,
+    database: process.env.MONGO_DATABASE
+  }
 };
+
 configuration.URL = {
   frontEnd: process.env.FE_URL
 }

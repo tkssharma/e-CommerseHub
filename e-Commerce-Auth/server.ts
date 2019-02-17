@@ -10,7 +10,6 @@ const port = (process.env.PORT);
 const logger = require('winston');
 import mongoose from './app/lib/mongoose';
 mongoose();
-
 const server = http.createServer(App);
 server.listen(process.env.PORT);
 server.on('error', onError);

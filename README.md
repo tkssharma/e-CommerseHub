@@ -51,6 +51,11 @@ export EXPRESS_SESSION_SECRET="************************"
 export F_CLIENTID="**************"
 export F_CLIENTSECRET="**********************"
 ```
+# Sevices end-point
+
+- http://ms-commerce.com/api/v1  Auth services
+- http://ms-commerce.com/admin/v1 Admin APIs
+- http://ms-commerce.com/admin/v1  Cart APIs
 
 # Application NPM Script
 ```javascript

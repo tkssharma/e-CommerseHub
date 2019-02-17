@@ -37,7 +37,10 @@ class userController {
         else {
           cb(new Error('no user found with this account email'), null);
         }
-      });
+      }).catch((err)=>{
+        console.log(err);
+        cb(new Error('no user found with this account email'), null);
+      })
   }
   static registerDefault(req, res, cb) {
     const { body } = req;

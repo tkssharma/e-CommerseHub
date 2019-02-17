@@ -34,9 +34,6 @@ services:
       - ~/datadir/mongo:/data/db
     ports:
       - 27017:27017
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: root
     networks:
       - ms_network
   ms_commerce_auth:

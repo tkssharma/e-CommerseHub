@@ -5,14 +5,31 @@ const env = process.env.NODE_ENV || 'dev'
 console.log(` using ${process.env.NODE_ENV} to run application`);
 global.configuration = require(`./app/config/environments/${env}`);
 import App from './express';
-
+import eventEmitter from './app/events/processEvent'
 const port = (process.env.PORT);
-const logger = require('winston');
+import logger from './app/lib/logger';
+import mysql from './app/lib/mysql';
+global['connection'] = mysql
 
-const server = http.createServer(App);
-server.listen(process.env.PORT);
-server.on('error', onError);
-server.on('listening', onListening);
+const appServer = http.createServer(App);
+
+appServer.on('error', onError);
+appServer.on('listening', onListening);
+
+
+if (!module.parent) {
+  eventEmitter.on('dbReady', (connection) => {
+    const port = process.env.PORT;
+     appServer.listen(process.env.PORT,
+      () => {
+        logger.info(`API running in environment ${process.env.NODE_ENV}`);
+        logger.info(`API running at http://localhost:${port}`);
+      },
+    );
+    appServer.setTimeout(200000);
+    if (process['parent']) process.send('ready');
+  });
+}
 
 
 function onError(error: NodeJS.ErrnoException): void {
@@ -57,7 +74,7 @@ process.on('SIGINT', gracefulStopServer);
 process.on('SIGTERM', gracefulStopServer);
 
 function onListening(): void {
-  let addr = server.address();
+  let addr = appServer.address();
   let bind = (typeof addr === 'string') ? `pipe ${addr}` : `port ${addr.port}`;
   debug(`Listening on ${bind}`);
 }
