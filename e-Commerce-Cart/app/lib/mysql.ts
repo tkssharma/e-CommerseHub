@@ -5,7 +5,7 @@ const mysql = require('mysql2');
 import eventEmitter from '../events/processEvent';
 /* eslint func-names: ["error", "never"] */
 const config = global['configuration'].db;
-
+console.log(config);
 let connection:any = null;
 
 try {
