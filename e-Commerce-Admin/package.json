@@ -8,7 +8,7 @@
     "startdev": ". ./env.sh  && cd dist &&  nodemon server.js",
     "clean": "rm -rf dist",
     "watch": "tsc",
-    "copy": "cp -r uploads dist/ && cp -r app/global dist/app/",
+    "copy": "cp -r uploads dist/",
     "test": ". ./env.sh  && NODE_ENV=test && mocha ",
     "debug": ". ./env.sh && NODE_ENV=test && cd dist && nodemon --inspect=0.0.0.0:9230 server.js",
     "prestartdev": " npm run clean && tsc &&  npm run copy && npm run watch",
