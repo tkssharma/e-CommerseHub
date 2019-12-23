@@ -1,8 +1,6 @@
 # Application for e-commerce Hub
 
-
 REST API to support application features
-
   - Express as web framework with Typescript
   - Passport js for social authentication 
   - Express CORS enabled
@@ -52,7 +50,6 @@ export F_CLIENTID="**************"
 export F_CLIENTSECRET="**********************"
 ```
 # update etc/hosts file
-
 ```
 ##
 # Host Database
