@@ -1,5 +1,6 @@
 # Application for e-commerce Hub
 
+
 REST API to support application features
   - Express as web framework with Typescript
   - Passport js for social authentication 
